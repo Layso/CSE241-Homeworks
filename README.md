@@ -9,3 +9,4 @@ In this homework main.cpp works (actually simulates) as a CPU which has 5 regist
 -
 Homework #02
 -
+This homework is continued version of homework 1. There are some small additions. CPU now has one more instruction which is JPN. Similar to JMP but controls if one number is smaller or equals to 0. Which provides a compare operation between numbers. Also there is now a memory which has 50 cells inside it and ready to used by CPU. Homeworks also wants a CPU Program that takes 10 numbers (random numbers given on PDF inserted to memory) and sorts them.
