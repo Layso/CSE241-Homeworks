@@ -1,0 +1,87 @@
+MOV #0, 30
+MOV #1, 23
+MOV #2, 4
+MOV #3, 56
+MOV #4, 34
+MOV #5, 56
+MOV #6, 89
+MOV #7, 32
+MOV #8, 45
+MOV #9, 25 ; L10: Loading 10 numbers to memory to sort them
+MOV R5, 10 ; L11: Loading count of numbers to register
+MOV #0, R1 ; L12: Compare #0 and #1 by subtracting
+MOV #1, R2
+MOV R2, R3 ; L14: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 60 ; L16: Jump line 60 to swap numbers if result is negative. Else continue
+MOV #1, R1 ; L17: Compare #1 and #2 by subtracting
+MOV #2, R2
+MOV R2, R3 ; L19: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 63 ; L21: Jump line 63 to swap numbers if result is negative. Else continue
+MOV #2, R1 ; L22: Compare #2 and #3 by subtracting
+MOV #3, R2
+MOV R2, R3 ; L24: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 66 ; L26: Jump line 66 to swap numbers if result is negative. Else continue
+MOV #3, R1 ; L27: Compare #3 and #4 by subtracting
+MOV #4, R2
+MOV R2, R3 ; L29: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 69 ; L31: Jump line 69 to swap numbers if result is negative. Else continue
+MOV #4, R1 ; L32: Compare #4 and #5 by subtracting
+MOV #5, R2
+MOV R2, R3 ; L34: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 72 ; L36: Jump line 72 to swap numbers if result is negative. Else continue
+MOV #5, R1 ; L37: Compare #5 and #6 by subtracting
+MOV #6, R2
+MOV R2, R3 ; L39: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 75 ; L41: Jump line 75 to swap numbers if result is negative. Else continue
+MOV #6, R1 ; L42: Compare #6 and #7 by subtracting
+MOV #7, R2
+MOV R2, R3 ; L44: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 78 ; L46: Jump line 78 to swap numbers if result is negative. Else continue
+MOV #7, R1 ; L47: Compare #7 and #8 by subtracting
+MOV #8, R2
+MOV R2, R3 ; L49: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 81 ; L51: Jump line 81 to swap numbers if result is negative. Else continue
+MOV #8, R1 ; L52: Compare #8 and #9 by subtracting
+MOV #9, R2
+MOV R2, R3 ; L54: Subtracting on a temporary register to prevent data loss
+SUB R3, R1
+JPN R3, 84 ; L56: Jump line 84 to swap numbers if result is negative. Else continue
+SUB R5, 1  ; L57: After compare every number, subtract 1 from loop control variable
+JMP R5, 87 ; L58: If loop control variable is 0 jump line 87 to halt
+JMP 12     ; L59: Else jump line 12 to repeat process
+MOV R2, #0 ; L60: Swap numbers on #0 and #1
+MOV R1, #1
+JMP 17     ; L62: Jump back to swap call line to continue comparing
+MOV R2, #1 ; L63: Swap numbers on #1 and #2
+MOV R1, #2
+JMP 22     ; L65: Jump back to swap call line to continue comparing
+MOV R2, #2 ; L66: Swap numbers on #2 and #3
+MOV R1, #3
+JMP 27     ; L68: Jump back to swap call line to continue comparing
+MOV R2, #3 ; L69: Swap numbers on #3 and #4
+MOV R1, #4
+JMP 32     ; L71: Jump back to swap call line to continue comparing
+MOV R2, #4 ; L72: Swap numbers on #4 and #5
+MOV R1, #5
+JMP 37     ; L74: Jump back to swap call line to continue comparing
+MOV R2, #5 ; L75: Swap numbers on #5 and #6
+MOV R1, #6
+JMP 42     ; L77: Jump back to swap call line to continue comparing
+MOV R2, #6 ; L78: Swap numbers on #6 and #7
+MOV R1, #7
+JMP 47     ; L80: Jump back to swap call line to continue comparing
+MOV R2, #7 ; L81: Swap numbers on #7 and #8
+MOV R1, #8
+JMP 52     ; L83: Jump back to swap call line to continue comparing
+MOV R2, #8 ; L84: Swap numbers on #8 and #9
+MOV R1, #9
+JMP 57     ; L83: Jump back to swap call line to continue comparing
+HLT        ; L87: HALT the program when sorting is done
