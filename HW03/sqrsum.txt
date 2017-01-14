@@ -1,0 +1,13 @@
+MOV R5, 10   ; L1:  Loading the number n (10 for this case) for outer loop
+MOV R1, 0    ; L2:  Clearing sum register in case CPU will not
+MOV R3, 1    ; L3:  R3 register will be used as decreaser constant
+MOV R5, R4   ; L4:  Copying R5 for inner loop
+ADD R1, R5   ; L5:  Adding sum register the current outer loop number to get square
+SUB R4, R3   ; L6:  Decreasing inner loop counter by 1
+JMP R4, 9    ; L7:  If inner loop counter is 0, jump to line 9
+JMP 5        ; L8:  Else jump to line 5
+SUB R5, 1    ; L9:  Decreasing outer loop counter by 1
+JMP R5, 12   ; L10: If outer loop counter is 0, jump to line 12
+JMP 4        ; L11: Else jump to line 4
+PRN R1       ; L12: Printing result
+HLT          ; L13: HALT
